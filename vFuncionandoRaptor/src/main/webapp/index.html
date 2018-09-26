@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <title>Portifólio Pessoal</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="auth">Home</a>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">                    
+                </form>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4 text-center">Meu Portfólio Pessoal.</h1>
+                    <p class="lead text-center">Acesse o link abaixo para verificar minhas principais publicações!</p>
+                </div>
+            </div>
+            <h3 class="text-center"><a href="auth">Clique Aqui Para Acessar</a></h3>
+            <br>
+
+
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="data:image/jpeg;base64,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" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="http://eidupont.scene7.com/is/image/eidupont/cargo-covers-recycling-banner-800x400" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXyldTu2dz3-9QeNdXExMerWL4XBUt1aixO0lxPAo-lmnOobmKqQ" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+        </div>
+        <div class="text-center">
+            UTFPR/MD - Tópicos Avançados Em Computação
+            <br><br>
+        </div>
+    </body>
+</html>
+
+
