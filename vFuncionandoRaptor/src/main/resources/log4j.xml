@@ -8,19 +8,19 @@
 		</layout>
 	</appender>
 
-	<category name="br.com.caelum">
+	<categoria name="br.com.caelum">
 		<priority value="INFO" />
 		<appender-ref ref="stdout" />
-	</category>
+	</categoria>
 
-	<category name="org.hibernate">
+	<categoria name="org.hibernate">
 		<priority value="INFO" />
 		<appender-ref ref="stdout" />
-	</category>
+	</categoria>
 
-	<category name="org.jboss">
+	<categoria name="org.jboss">
 		<priority value="INFO" />
 		<appender-ref ref="stdout" />
-	</category>
+	</categoria>
 
 </log4j:configuration>

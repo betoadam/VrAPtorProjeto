@@ -7,8 +7,8 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
-import br.edu.utfpr.md.model.Category;
-import br.edu.utfpr.md.webapp.dao.CategoryDAO;
+import br.edu.utfpr.md.model.Categoria;
+import br.edu.utfpr.md.webapp.dao.CategoriaDAO;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
@@ -17,15 +17,15 @@ import javax.validation.constraints.NotNull;
 import org.bson.types.ObjectId;
 
 @Controller
-@Path("/category")
-public class CategoryController {
+@Path("/categoria")
+public class CategoriaController {
 
     @Inject
     private Result result;
     @Inject
     private Validator validator;
     @Inject
-    private CategoryDAO categoryDAO;
+    private CategoriaDAO categoriaDAO;
 
     @Path("/new")
     @Get
@@ -34,17 +34,17 @@ public class CategoryController {
 
     @Path(value = {"", "/"})
     @Get
-    public List<Category> list() {
+    public List<Categoria> list() {
         result.include("mensagem", "esta é uma mensagem");
         result.include("data", new Date());
-        return categoryDAO.find().asList();
+        return categoriaDAO.find().asList();
     }
 
     @Post
-    public void save(@Valid @NotNull Category category) {
+    public void save(@Valid @NotNull Categoria categoria) {
         validator.onErrorForwardTo(this).form();
         try {
-            this.categoryDAO.save(category);
+            this.categoriaDAO.save(categoria);
         } catch (Exception e) {
             e.printStackTrace();
             validator.add(new SimpleMessage("dao", "Falha ao Inserir Categoria!"));
@@ -54,22 +54,22 @@ public class CategoryController {
 
     @Path("/update/{id}")
     public void update(ObjectId id) {
-        Category cat = this.categoryDAO.getById(id);
+        Categoria cat = this.categoriaDAO.getById(id);
         result.include("categoria", cat);
         result.forwardTo(this).form();
     }
 
     @Path("/delete/{id}")
     public void delete(ObjectId id) {
-        Category cat = this.categoryDAO.getById(id);
-        this.categoryDAO.delete(cat);
+        Categoria cat = this.categoriaDAO.getById(id);
+        this.categoriaDAO.delete(cat);
         result.forwardTo(this).list();
     }
 
-    public void atualiza(@Valid @NotNull Category category) {
+    public void atualiza(@Valid @NotNull Categoria categoria) {
         validator.onErrorForwardTo(this).form();
         try {
-            this.categoryDAO.save(category);
+            this.categoriaDAO.save(categoria);
         } catch (Exception e) {
             e.printStackTrace();
             validator.add(new SimpleMessage("dao", "Falha ao Inserir Categoria!"));

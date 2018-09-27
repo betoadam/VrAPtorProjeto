@@ -3,8 +3,8 @@
 <c:import url="/WEB-INF/jsp/inc/header.jsp"/>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="${linkTo[DocumentController].list}">Home</a></li>        
-        <li class="breadcrumb-item"><a href="${linkTo[CategoryController].list}">Categorias</a></li>
+        <li class="breadcrumb-item"><a href="${linkTo[DocumentoController].list}">Home</a></li>        
+        <li class="breadcrumb-item"><a href="${linkTo[CategoriaController].list}">Categorias</a></li>
         <li class="breadcrumb-item active" aria-current="page">Nova Categoria</li>
     </ol>
 </nav>
@@ -12,21 +12,21 @@
     <h1>Categoria (Cadastro)</h1>
         <c:if test="${not empty errors}">
             <c:forEach items="${errors}" var="err">
-                <li>${err.category} ${err.message}</li>
+                <li>${err.categoria} ${err.message}</li>
             </c:forEach>
         </c:if>
 
         <c:if test="${not empty categoria.name}">
-            <form action="${linkTo[CategoryController].atualiza}" method="POST">
-                <input type="text" class="hidden" style="display: none; " name="category.id" value="${categoria.id}"/>
+            <form action="${linkTo[CategoriaController].atualiza}" method="POST">
+                <input type="text" class="hidden" style="display: none; " name="categoria.id" value="${categoria.id}"/>
         </c:if>
 
         <c:if test="${empty categoria.name}">
-            <form action="${linkTo[CategoryController].save}" method="POST">
+            <form action="${linkTo[CategoriaController].save}" method="POST">
         </c:if>
         <div class="form-group">
             <label>Categoria: </label>
-            <input type="text" class="form-control" name="category.name" value="${categoria.name}"/>
+            <input type="text" class="form-control" name="categoria.name" value="${categoria.name}"/>
         </div>
         <div>
             <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Salvar Alterações">Gravar</button>

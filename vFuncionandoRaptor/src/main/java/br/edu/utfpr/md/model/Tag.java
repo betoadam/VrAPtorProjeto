@@ -6,17 +6,17 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
 @Entity
-public class Keyword {
+public class Tag {
 
     @Id
     private ObjectId id;
     @NotNull
     private String name;
 
-    public Keyword() {
+    public Tag() {
     }
 
-    public Keyword(ObjectId id, String name) {
+    public Tag(ObjectId id, String name) {
         this.id = id;
         this.name = name;
     }

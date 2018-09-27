@@ -7,8 +7,8 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
-import br.edu.utfpr.md.model.Keyword;
-import br.edu.utfpr.md.webapp.dao.KeywordDAO;
+import br.edu.utfpr.md.model.Tag;
+import br.edu.utfpr.md.webapp.dao.TagDAO;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
@@ -17,15 +17,15 @@ import javax.validation.constraints.NotNull;
 import org.bson.types.ObjectId;
 
 @Controller
-@Path("/keyword")
-public class KeywordController {
+@Path("/tag")
+public class TagController {
 
     @Inject
     private Result result;
     @Inject
     private Validator validator;
     @Inject
-    private KeywordDAO keywordDAO;
+    private TagDAO tagDAO;
 
     @Path("/new")
     @Get
@@ -34,46 +34,46 @@ public class KeywordController {
 
     @Path(value = {"", "/"})
     @Get
-    public List<Keyword> list() {
+    public List<Tag> list() {
         result.include("mensagem", "esta é uma mensagem");
         result.include("data", new Date());
-        return keywordDAO.find().asList();
+        return tagDAO.find().asList();
     }
 
     @Post
-    public void save(@Valid @NotNull Keyword keyword) {
+    public void save(@Valid @NotNull Tag tag) {
         validator.onErrorForwardTo(this).form();
         try {
-            this.keywordDAO.save(keyword);
+            this.tagDAO.save(tag);
         } catch (Exception e) {
             e.printStackTrace();
-            validator.add(new SimpleMessage("dao", "Falha ao Inserir keyword!"));
+            validator.add(new SimpleMessage("dao", "Falha ao Inserir tag!"));
         }
         result.redirectTo(this).list();
     }
 
     @Path("/update/{id}")
     public void update(ObjectId id) {
-        Keyword key = this.keywordDAO.getById(id);
-        result.include("keyword", key);
+        Tag key = this.tagDAO.getById(id);
+        result.include("tag", key);
         result.forwardTo(this).form();
     }
 
-    public void atualiza(@Valid @NotNull Keyword keyword) {
+    public void atualiza(@Valid @NotNull Tag tag) {
         validator.onErrorForwardTo(this).form();
         try {
-            this.keywordDAO.save(keyword);
+            this.tagDAO.save(tag);
         } catch (Exception e) {
             e.printStackTrace();
-            validator.add(new SimpleMessage("dao", "Falha ao Inserir keyword!"));
+            validator.add(new SimpleMessage("dao", "Falha ao Inserir tag!"));
         }
         result.redirectTo(this).list();
     }
 
     @Path("/delete/{id}")
     public void delete(ObjectId id) {
-        Keyword cat = this.keywordDAO.getById(id);
-        this.keywordDAO.delete(cat);
+        Tag cat = this.tagDAO.getById(id);
+        this.tagDAO.delete(cat);
         result.forwardTo(this).list();
     }
 }

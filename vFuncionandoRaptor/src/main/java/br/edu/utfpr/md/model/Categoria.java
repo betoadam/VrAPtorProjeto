@@ -7,17 +7,17 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
 @Entity
-public class Category {
+public class Categoria {
 
     @Id
     private ObjectId id;
     @NotNull
     private String name;
 
-    public Category() {
+    public Categoria() {
     }
 
-    public Category(ObjectId id, String name) {
+    public Categoria(ObjectId id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -40,7 +40,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" + "id=" + id + ", name=" + name + '}';
+        return "Categoria{" + "id=" + id + ", name=" + name + '}';
     }
     
     
@@ -64,7 +64,7 @@ public class Category {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Category other = (Category) obj;
+        final Categoria other = (Categoria) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

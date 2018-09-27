@@ -45,7 +45,7 @@ public class AuthController {
                 usuario.setNome(dbUser.getNome());
                 usuario.setAdministrator(dbUser.isAdministrator());
                 this.loggedUser.login(usuario);
-                this.result.redirectTo("/document");
+                this.result.redirectTo("/documento");
             } else {
                 validator.add(new SimpleMessage("invalid", "Login e/ou Senha Invalidos!"));
             }
@@ -70,7 +70,7 @@ public class AuthController {
             e.printStackTrace();
             validator.add(new SimpleMessage("dao", "Falha ao Inserir Usuario!"));
         }
-        result.redirectTo("/document");
+        result.redirectTo("/documento");
     }
 
 }

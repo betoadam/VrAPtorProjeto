@@ -1,5 +1,5 @@
 <%-- 
-    Document   : form
+    Documento   : form
     Created on : Aug 30, 2018, 1:16:20 PM
     Author     : Leonardo
 --%>
@@ -11,7 +11,7 @@
     <h1>Carro (Cadastro)</h1>
     <c:if test="${not empty errors}">
         <c:forEach items="${errors}" var="err">
-            <li>${err.category} ${err.message}</li>
+            <li>${err.categoria} ${err.message}</li>
             </c:forEach>
         </c:if>
 

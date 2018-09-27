@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 
 @Entity
-public class Document {
+public class Documento {
 
     @Id
     private ObjectId id;
@@ -21,21 +21,21 @@ public class Document {
     @Reference
     private Usuario usuario;
     @Reference
-    private Category category;
+    private Categoria categoria;
     @Reference
-    private List<Keyword> keywords;
+    private List<Tag> tags;
 
-    public Document() {
+    public Documento() {
     }
 
-    public Document(String description, Date date, Date lastUpdate, String fileName, Usuario usuario, Category category, List<Keyword> keywords) {
+    public Documento(String description, Date date, Date lastUpdate, String fileName, Usuario usuario, Categoria categoria, List<Tag> tags) {
         this.description = description;
         this.date = date;
         this.lastUpdate = lastUpdate;
         this.fileName = fileName;
         this.usuario = usuario;
-        this.category = category;
-        this.keywords = keywords;
+        this.categoria = categoria;
+        this.tags = tags;
     }
 
     public ObjectId getId() {
@@ -86,20 +86,20 @@ public class Document {
         this.usuario = usuario;
     }
 
-    public Category getCategory() {
-        return category;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public List<Keyword> getKeywords() {
-        return keywords;
+    public List<Tag> getTags() {
+        return tags;
     }
 
-    public void setKeywords(List<Keyword> keywords) {
-        this.keywords = keywords;
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
 }

@@ -4,7 +4,7 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="${linkTo[DocumentController].list}">Home</a></li>        
+        <li class="breadcrumb-item"><a href="${linkTo[DocumentoController].list}">Home</a></li>        
         <li class="breadcrumb-item active" aria-current="page">Categorias</li>
     </ol>
 </nav>
@@ -17,13 +17,13 @@
             <th>Ações</th>
         </tr>
     </thead>
-    <c:forEach items="${categoryList}" var="category">
+    <c:forEach items="${categoriaList}" var="categoria">
         <tr>
-            <td>${category.id}</td>
-            <td>${category.name}</td>
+            <td>${categoria.id}</td>
+            <td>${categoria.name}</td>
             <td>
-                <a class="btn btn-secondary" href="${linkTo[CategoryController].update}${category.id}">Editar</a>
-                <a class="btn btn-danger" href="${linkTo[CategoryController].delete}${category.id}">Deletar</a>
+                <a class="btn btn-secondary" href="${linkTo[CategoriaController].update}${categoria.id}">Editar</a>
+                <a class="btn btn-danger" href="${linkTo[CategoriaController].delete}${categoria.id}">Deletar</a>
             </td>
         </tr>   
     </c:forEach>

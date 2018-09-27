@@ -4,7 +4,7 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="${linkTo[DocumentController].list}">Home</a></li>        
+    <li class="breadcrumb-item"><a href="${linkTo[DocumentoController].list}">Home</a></li>        
     <li class="breadcrumb-item active" aria-current="page">Documentos</li>
   </ol>
 </nav>
@@ -20,27 +20,27 @@
             <th>Data</th>
             <th>Ultima Atualização</th>
             <th>Categoria</th>
-            <th>Keywords</th>
+            <th>Tags</th>
             <th>Ações</th>
         </tr>
     </thead>
-    <c:forEach items="${documentList}" var="document">
+    <c:forEach items="${documentoList}" var="documento">
         <tr>
-            <td>${document.id}</td>
-            <td>${document.usuario.nome}</td>
-            <td>${document.description}</td>
-            <td>${document.fileName}</td>
-            <td>${document.date}</td>
-            <td>${document.lastUpdate}</td>
-            <td>${document.category.name}</td>
+            <td>${documento.id}</td>
+            <td>${documento.usuario.nome}</td>
+            <td>${documento.description}</td>
+            <td>${documento.fileName}</td>
+            <td>${documento.date}</td>
+            <td>${documento.lastUpdate}</td>
+            <td>${documento.categoria.name}</td>
             <td>    
-                <c:forEach items="${document.keywords}" var="keyword">
-                    <span>${keyword.name}</span>
+                <c:forEach items="${documento.tags}" var="tag">
+                    <span>${tag.name}</span>
                 </c:forEach>
             </td>
             <td>
-                <a class="btn btn-secondary" href="${linkTo[DocumentController].update}${document.id}">Editar</a>
-                <a class="btn btn-danger" href="${linkTo[DocumentController].delete}${document.id}">Deletar</a>
+                <a class="btn btn-secondary" href="${linkTo[DocumentoController].update}${documento.id}">Editar</a>
+                <a class="btn btn-danger" href="${linkTo[DocumentoController].delete}${documento.id}">Deletar</a>
             </td>
         </tr>   
     </c:forEach>

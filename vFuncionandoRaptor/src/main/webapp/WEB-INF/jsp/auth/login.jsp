@@ -5,7 +5,7 @@
     <h1>Auth (login)!</h1>
     <c:if test="${not empty errors}">
         <c:forEach items="${errors}" var="err">
-            <li>${err.category} ${err.message}</li>
+            <li>${err.categoria} ${err.message}</li>
             </c:forEach>
         </c:if> 
     <form action="${linkTo[AuthController].autenticar}" method="POST">
@@ -26,7 +26,7 @@
     <h1>Auth (Register)</h1>
     <c:if test="${not empty errors}">
         <c:forEach items="${errors}" var="err">
-            <li>${err.category} ${err.message}</li>
+            <li>${err.categoria} ${err.message}</li>
             </c:forEach>
         </c:if>
     <form action="${linkTo[AuthController].registrar}" method="POST">

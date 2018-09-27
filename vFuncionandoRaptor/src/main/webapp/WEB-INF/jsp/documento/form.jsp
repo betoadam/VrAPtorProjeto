@@ -4,8 +4,8 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="${linkTo[DocumentController].list}">Home</a></li>        
-        <li class="breadcrumb-item"><a href="${linkTo[DocumentController].list}">Documentos</a></li>
+        <li class="breadcrumb-item"><a href="${linkTo[DocumentoController].list}">Home</a></li>        
+        <li class="breadcrumb-item"><a href="${linkTo[DocumentoController].list}">Documentos</a></li>
         <li class="breadcrumb-item active" aria-current="page">Novo Documento</li>
     </ol>
 </nav>
@@ -13,17 +13,17 @@
     <h1>Documento (Cadastro)</h1>
     <c:if test="${not empty errors}">
         <c:forEach items="${errors}" var="err">
-            <li>${err.category} ${err.message}</li>
+            <li>${err.categoria} ${err.message}</li>
             </c:forEach>
         </c:if>
 
     <c:if test="${not empty documento.id}">
-        <form action="${linkTo[DocumentController].atualiza}" method="POST">
+        <form action="${linkTo[DocumentoController].atualiza}" method="POST">
             <input type="text" class="hidden" style="display: none; " name="id" value="${documento.id}"/>
         </c:if>
 
         <c:if test="${empty documento.id}">
-            <form action="${linkTo[DocumentController].save}" method="POST">
+            <form action="${linkTo[DocumentoController].save}" method="POST">
             </c:if>
 
 
@@ -45,17 +45,17 @@
             </div>
             <div class="form-group">
                 <label>Categoria:</label>
-                <select class="form-control" name="selectedCategoryId" required>
+                <select class="form-control" name="selectedCategoriaId" required>
                     <c:forEach items="${categorias}" var="categoria">
                         <option value="${categoria.id}">${categoria.name}</option>
                     </c:forEach>
                 </select>
             </div>
             <div class="form-group">
-                <label>Keywords:</label>
-                <select class="form-control" name="keywords[]" size="10" multiple required>
-                    <c:forEach items="${keywords}" var="keyword">
-                        <option value="${keyword.id}">${keyword.name}</option>
+                <label>Tags:</label>
+                <select class="form-control" name="tags[]" size="10" multiple required>
+                    <c:forEach items="${tags}" var="tag">
+                        <option value="${tag.id}">${tag.name}</option>
                     </c:forEach>
                 </select>
             </div>

@@ -20,15 +20,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="${linkTo[DocumentController].list}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="${linkTo[DocumentoController].list}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Documentos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${linkTo[DocumentController].list}">Listagem de Documentos</a>
-                            <a class="dropdown-item" href="${linkTo[DocumentController].form}"><span class="badge badge-secondary">Novo</span> Documento</a>
+                            <a class="dropdown-item" href="${linkTo[DocumentoController].list}">Listagem de Documentos</a>
+                            <a class="dropdown-item" href="${linkTo[DocumentoController].form}"><span class="badge badge-secondary">Novo</span> Documento</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -36,17 +36,17 @@
                             Categorias
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${linkTo[CategoryController].list}">Listagem de Categorias</a>
-                            <a class="dropdown-item" href="${linkTo[CategoryController].form}"><span class="badge badge-secondary">Nova</span> Categoria</a>
+                            <a class="dropdown-item" href="${linkTo[CategoriaController].list}">Listagem de Categorias</a>
+                            <a class="dropdown-item" href="${linkTo[CategoriaController].form}"><span class="badge badge-secondary">Nova</span> Categoria</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Keywords
+                            Tags
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${linkTo[KeywordController].list}">Listagem de Keywords</a>
-                            <a class="dropdown-item" href="${linkTo[KeywordController].form}"><span class="badge badge-secondary">Nova</span> Keyword</a>
+                            <a class="dropdown-item" href="${linkTo[TagController].list}">Listagem de Tags</a>
+                            <a class="dropdown-item" href="${linkTo[TagController].form}"><span class="badge badge-secondary">Nova</span> Tag</a>
                         </div>
                     </li>
                     <c:if test="${loggedUser.usuario.administrator}">
